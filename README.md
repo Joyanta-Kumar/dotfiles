@@ -25,6 +25,8 @@ I don't know how to take screenshot ;)
 
 1. clone the repo.
 2. install gnu stow.
+3. `cd` into the local clone.
+4. Then,
 
 ```sh
 stow [package]
