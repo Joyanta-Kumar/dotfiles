@@ -19,3 +19,13 @@ Borrowed idea and configs from
 ![screenshot](./res/screenshot/not_ss.jpg)
 
 I don't know how to take screenshot ;)
+
+
+## Usage
+
+1. clone the repo.
+2. install gnu stow.
+
+```sh
+stow [package]
+```
