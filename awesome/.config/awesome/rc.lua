@@ -54,7 +54,7 @@ beautiful.init("/home/joy/.config/awesome/themes/joy/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
-editor = os.getenv("EDITOR") or "nvim"
+editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -207,9 +207,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({
         position = "bottom",
         screen = s,
-        shape = gears.shape.rect,
-        width = 1920,
-        height = 26,
+        shape = rect,
         ontop = false,
     })
 
@@ -356,6 +354,14 @@ globalkeys = gears.table.join(
 )
 
 clientkeys = gears.table.join(
+    awful.key({ modkey, }, "b",
+        function(c)
+		local s = awful.screen.focused()
+		if s.mywibox then
+			s.mywibox.visible = not s.mywibox.visible
+		end
+        end,
+        { description = "toggle bar", group = "client" }),
     awful.key({ modkey, }, "f",
         function(c)
             c.fullscreen = not c.fullscreen
@@ -600,7 +606,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 
 
-awful.spawn.with_shell("picom")
+-- awful.spawn.with_shell("picom")
 awful.spawn.with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 -- Autostart Redshift
 awful.spawn.with_shell("pgrep -x redshift || redshift &")
