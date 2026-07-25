@@ -1,114 +1,107 @@
 local themes_path = "/home/joy/.config/awesome/themes/"
 local dpi = require("beautiful.xresources").apply_dpi
 local theme = {}
-local colors = {} -- not related with awesome wm
 
-
--- Basic
---theme.wallpaper = themes_path .. "joy/wallpapers/a.png"
+-- basics
 theme.wallpaper  = "/home/joy/.config/backgrounds/nice-blue-background.png"
-theme.font       = "JetbrainsMono Nerd Font 10"
+theme.font       = "JetbrainsMono Nerd Font 11"
 
 -- custom colors
-colors.rosewater = "#f5e0dc"
-colors.flamingo  = "#f2cdcd"
-colors.pink      = "#f5c2e7"
-colors.mauve     = "#cba6f7"
-colors.red       = "#f38ba8"
-colors.maroon    = "#eba0ac"
-colors.peach     = "#fab387"
-colors.yellow    = "#f9e2af"
-colors.green     = "#a6e3a1"
-colors.teal      = "#94e2d5"
-colors.sky       = "#89dceb"
-colors.sapphire  = "#74c7ec"
-colors.blue      = "#89b4fa"
-colors.lavender  = "#b4befe"
-colors.text      = "#cdd6f4"
-colors.subtext1  = "#bac2de"
-colors.subtext0  = "#a6adc8"
-colors.overlay2  = "#9399b2"
-colors.overlay1  = "#7f849c"
-colors.overlay0  = "#6c7086"
-colors.surface2  = "#585b70"
-colors.surface1  = "#45475a"
-colors.surface0  = "#313244"
-colors.base      = "#1e1e2e"
-colors.mantle    = "#181825"
-colors.crust     = "#11111b"
+local colors = {
+    rosewater = "#f5e0dc",
+    flamingo  = "#f2cdcd",
+    pink      = "#f5c2e7",
+    mauve     = "#cba6f7",
+    red       = "#f38ba8",
+    maroon    = "#eba0ac",
+    peach     = "#fab387",
+    yellow    = "#f9e2af",
+    green     = "#a6e3a1",
+    teal      = "#94e2d5",
+    sky       = "#89dceb",
+    sapphire  = "#74c7ec",
+    blue      = "#89b4fa",
+    lavender  = "#b4befe",
+    text      = "#cdd6f4",
+    subtext1  = "#bac2de",
+    subtext0  = "#a6adc8",
+    overlay2  = "#9399b2",
+    overlay1  = "#7f849c",
+    overlay0  = "#6c7086",
+    surface2  = "#585b70",
+    surface1  = "#45475a",
+    surface0  = "#313244",
+    base      = "#1e1e2e",
+    mantle    = "#181825",
+    crust     = "#11111b"
+}
 
 
-theme.fg_normal     = colors.text
 theme.fg_focus      = colors.yellow
+theme.fg_normal     = colors.text
 theme.fg_urgent     = colors.maroon
-theme.bg_normal     = colors.mantle
-theme.bg_focus      = colors.mantle
-theme.bg_urgent     = colors.surface0
-theme.bg_systray    = theme.bg_normal
+theme.bg_focus      = colors.crust
+theme.bg_normal     = colors.crust
+theme.bg_urgent     = colors.crust
+theme.bg_systray    = colors.crust
 
 -- Borders
 theme.useless_gap   = dpi(4)
 theme.border_width  = dpi(2)
-theme.border_normal = colors.base
 theme.border_focus  = colors.blue
-theme.border_marked = colors.maroon
+theme.border_normal = colors.base
+theme.border_marked = colors.red
 
 -- Tasklist
-theme.tasklist_fg_focus     = colors.mauve
-theme.tasklist_fg_normal    = colors.surface2
-theme.tasklist_bg_normal    = colors.crust
+theme.tasklist_fg_focus     = colors.text
+theme.tasklist_fg_normal    = colors.text
 theme.tasklist_bg_focus     = colors.crust
+theme.tasklist_bg_normal    = colors.crust
 
 -- Titlebar
-theme.titlebar_bg_focus     = colors.surface0
-theme.titlebar_bg_normal    = colors.surface0
+theme.titlebar_fg_focus     = colors.text
+theme.titlebar_fg_normal    = colors.text
+theme.titlebar_bg_focus     = colors.crust
+theme.titlebar_bg_normal    = colors.crust
 
 -- Taglist
-theme.taglist_fg_empty      = colors.text
-theme.taglist_bg_empty      = colors.crust
-theme.taglist_fg_focus      = colors.crust
-theme.taglist_bg_focus      = colors.mauve
-theme.taglist_fg_occupied   = colors.text
-theme.taglist_bg_occupied   = colors.surface0
+theme.taglist_fg_focus      = colors.text
+theme.taglist_fg_empty      = colors.surface0
+theme.taglist_fg_occupied   = colors.subtext0
+theme.taglist_fg_urgent     = colors.red
+theme.taglist_fg_volatile   = colors.text
 
--- There are other variable sets
--- overriding the default one when
--- defined, the sets are:
--- [taglist|tasklist]_[bg|fg]_[focus|urgent|occupied|empty|volatile]
+theme.taglist_bg_focus      = colors.crust
+theme.taglist_bg_urgent     = colors.crust
+theme.taglist_bg_empty      = colors.crust
+theme.taglist_bg_occupied   = colors.crust
+theme.taglist_bg_volatile   = colors.crust
+
+
 -- titlebar_[normal|focus]
 -- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
--- Example:
---theme.taglist_bg_focus = "#CC9393"
--- }}}
 
--- {{{ Widgets
--- You can add as many variables as
--- you wish and access them by using
--- beautiful.variable in your rc.lua
---theme.fg_widget        = "#AECF96"
---theme.fg_center_widget = "#88A175"
---theme.fg_end_widget    = "#FF5656"
---theme.bg_widget        = "#494B4F"
---theme.border_widget    = "#3F3F3F"
--- }}}
 
--- {{{ Mouse finder
-theme.mouse_finder_color                        = "#CC9393"
--- mouse_finder_[timeout|animate_timeout|radius|factor]
--- }}}
+theme.fg_widget        = colors.yellow
+theme.fg_center_widget = colors.green
+theme.fg_end_widget    = colors.red
+theme.bg_widget        = colors.crust
+theme.border_widget    = colors.crust
 
--- {{{ Menu
--- Variables set for theming the menu:
+theme.mouse_finder_color    = "#CC9393"
+-- mouse_finder_[timeout|animate_timeout|radius|fact]
+
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_height                               = dpi(25)
-theme.menu_width                                = dpi(150)
-theme.menu_bg_normal                            = "#181825"
-theme.menu_fg_normal                            = "#cdd6f4"
-theme.menu_bg_focus                             = "#cba6f7"
-theme.menu_fg_focus                             = "#181825"
-theme.menu_border_color                         = "#cba6f7"
--- }}}
+theme.menu_height       = dpi(30)
+theme.menu_width        = dpi(160)
+theme.menu_border_width = dpi(2)
+theme.menu_border_color = colors.blue
+theme.menu_fg_normal    = colors.text
+theme.menu_fg_focus     = colors.blue
+theme.menu_bg_normal    = colors.crust
+theme.menu_bg_focus     = colors.base
+
 
 -- {{{ Icons
 -- {{{ Taglist
@@ -118,27 +111,27 @@ theme.menu_border_color                         = "#cba6f7"
 -- }}}
 
 -- {{{ Misc
-theme.awesome_icon                              = themes_path .. "joy/awesome-icon.png"
-theme.menu_submenu_icon                         = themes_path .. "default/submenu.png"
+theme.awesome_icon          = themes_path .. "joy/blue-thunder.png"
+-- theme.menu_submenu_icon     = themes_path .. "joy/blue-thunder.png"
 -- }}}
 
 -- {{{ Layout
-theme.layout_tile                               = themes_path .. "joy/layouts2/tilew.png"
-theme.layout_tileleft                           = themes_path .. "joy/layouts2/tileleft.png"
-theme.layout_tilebottom                         = themes_path .. "joy/layouts2/tilebottom.png"
-theme.layout_tiletop                            = themes_path .. "joy/layouts2/tiletop.png"
-theme.layout_fairv                              = themes_path .. "joy/layouts2/fairv.png"
-theme.layout_fairh                              = themes_path .. "joy/layouts2/fairh.png"
-theme.layout_spiral                             = themes_path .. "joy/layouts2/spiral.png"
-theme.layout_dwindle                            = themes_path .. "joy/layouts2/dwindle.png"
-theme.layout_max                                = themes_path .. "joy/layouts2/max.png"
-theme.layout_fullscreen                         = themes_path .. "joy/layouts2/fullscreen.png"
-theme.layout_magnifier                          = themes_path .. "joy/layouts2/magnifier.png"
-theme.layout_floating                           = themes_path .. "joy/layouts2/floatingw.png"
-theme.layout_cornernw                           = themes_path .. "joy/layouts2/cornernw.png"
-theme.layout_cornerne                           = themes_path .. "joy/layouts2/cornerne.png"
-theme.layout_cornersw                           = themes_path .. "joy/layouts2/cornersw.png"
-theme.layout_cornerse                           = themes_path .. "joy/layouts2/cornerse.png"
+theme.layout_tile           = themes_path .. "joy/layouts2/tilew.png"
+theme.layout_tileleft       = themes_path .. "joy/layouts2/tileleft.png"
+theme.layout_tilebottom     = themes_path .. "joy/layouts2/tilebottom.png"
+theme.layout_tiletop        = themes_path .. "joy/layouts2/tiletop.png"
+theme.layout_fairv          = themes_path .. "joy/layouts2/fairv.png"
+theme.layout_fairh          = themes_path .. "joy/layouts2/fairh.png"
+theme.layout_spiral         = themes_path .. "joy/layouts2/spiral.png"
+theme.layout_dwindle        = themes_path .. "joy/layouts2/dwindle.png"
+theme.layout_max            = themes_path .. "joy/layouts2/max.png"
+theme.layout_fullscreen     = themes_path .. "joy/layouts2/fullscreen.png"
+theme.layout_magnifier      = themes_path .. "joy/layouts2/magnifier.png"
+theme.layout_floating       = themes_path .. "joy/layouts2/floatingw.png"
+theme.layout_cornernw       = themes_path .. "joy/layouts2/cornernw.png"
+theme.layout_cornerne       = themes_path .. "joy/layouts2/cornerne.png"
+theme.layout_cornersw       = themes_path .. "joy/layouts2/cornersw.png"
+theme.layout_cornerse       = themes_path .. "joy/layouts2/cornerse.png"
 -- }}}
 
 -- {{{ Titlebar
