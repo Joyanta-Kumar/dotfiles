@@ -49,11 +49,12 @@ local menu        = "rofi -show drun"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
--- hl.on("hyprland.start", function () 
---   hl.exec_cmd(terminal)
---   hl.exec_cmd("nm-applet")
---   hl.exec_cmd("waybar & hyprpaper & firefox")
--- end)
+hl.on("hyprland.start", function () 
+  hl.exec_cmd(terminal)
+  hl.exec_cmd("nm-applet")
+  hl.exec_cmd("waybar & hyprpaper")
+  hl.exec_cmd("systemctl --user start hyprpolkitagent")
+end)
 
 
 -------------------------------
@@ -108,7 +109,7 @@ hl.config({
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing = true,
 
-        layout = "master",
+        layout = "dwindle",
     },
 
     decoration = {
@@ -135,7 +136,7 @@ hl.config({
     },
 
     animations = {
-        enabled = false,
+        enabled = true,
     },
 })
 
