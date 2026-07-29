@@ -50,7 +50,7 @@ local menu        = "rofi -show drun"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function () 
-  hl.exec_cmd(terminal)
+  -- hl.exec_cmd(terminal)
   hl.exec_cmd("nm-applet")
   hl.exec_cmd("waybar & hyprpaper")
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
@@ -65,6 +65,10 @@ end)
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+
+hl.env("XCURSOR_THEME", "BreezeX-Light")
+hl.env("HYPRCURSOR_THEME", "BreezeX-Light")
+
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 -----------------------
@@ -128,7 +132,7 @@ hl.config({
         },
 
         blur = {
-            enabled   = false,
+            enabled   = true,
             size      = 3,
             passes    = 1,
             vibrancy  = 0.1696,
