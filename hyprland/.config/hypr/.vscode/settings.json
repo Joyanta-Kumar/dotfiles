@@ -1,0 +1,25 @@
+{
+    "Lua.workspace.library": [
+        "/usr/share/hypr/stubs"
+    ],
+    "cSpell.words": [
+        "awww",
+        "drun",
+        "HYPRCURSOR",
+        "hyprpaper",
+        "hyprpm",
+        "libexec",
+        "PLATFORMTHEME",
+        "polkit",
+        "popin",
+        "rofi",
+        "screencopy",
+        "swaync",
+        "VIDEODRIVER",
+        "waybar",
+        "WINDOWDECORATION",
+        "windowrules",
+        "XCURSOR",
+        "xwayland"
+    ]
+}
