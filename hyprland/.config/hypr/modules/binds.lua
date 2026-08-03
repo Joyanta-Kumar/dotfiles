@@ -23,6 +23,26 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("hyprshot -m region"))
+
+
+-- Standard Fullscreen (Hides bars and gaps)
+
+
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({action = "toggle"}))
+
+
+-- Screenshot a selected region
+
+-- Screenshot active window
+-- hl.bind("SUPER", "Print", hl.dsp.exec_cmd("hyprshot -m window"))
+
+-- Screenshot entire monitor
+-- hl.bind("SHIFT", "Print", hl.dsp.exec_cmd("hyprshot -m output"))
+
+
+
+
 
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/joy/.config/waybar/scripts/launch.sh"))
 
