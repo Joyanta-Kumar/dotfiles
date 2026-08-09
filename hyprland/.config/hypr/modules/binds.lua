@@ -41,9 +41,6 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({action = "toggle"}))
 -- hl.bind("SHIFT", "Print", hl.dsp.exec_cmd("hyprshot -m output"))
 
 
-
-
-
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/joy/.config/waybar/scripts/launch.sh"))
 
 -- Move focus with mainMod + arrow keys
