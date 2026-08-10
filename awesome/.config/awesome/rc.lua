@@ -531,7 +531,7 @@ awful.rules.rules = {
     {
         rule_any = { type = { "normal", "dialog" }
         },
-        properties = { titlebars_enabled = true }
+        properties = { titlebars_enabled = false }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -606,6 +606,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 
 
--- awful.spawn.with_shell("picom")
+awful.spawn.with_shell("picom")
 awful.spawn.with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 awful.spawn.with_shell("pgrep -x redshift || redshift &")
