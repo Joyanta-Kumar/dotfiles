@@ -1,0 +1,15 @@
+[general]
+import = ['./colors.toml']
+live_config_reload = true
+ipc_socket = true
+
+[env]
+WINIT_X11_SCALE_FACTOR = '1.0'
+
+[window]
+decorations = 'None'
+padding = { x = 6, y = 6 }
+
+[font]
+normal = { family = 'JetBrainsMono Nerd Font Mono', style = 'Regular' }
+size = 10
