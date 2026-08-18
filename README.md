@@ -7,6 +7,7 @@
 4. Kitty
 5. Wiremix
 6. Feh, GThumb
+7. Shotgun
 
 Borrowed idea and configs from  
 
