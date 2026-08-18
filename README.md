@@ -16,7 +16,8 @@ Borrowed idea and configs from
 - hyprland
 - i3
 
-![screenshot](./res/screenshot/not_ss.jpg)
+<img width="1920" height="1080" alt="1787081444" src="https://github.com/user-attachments/assets/62ba20f5-ab33-4efc-b99e-50786e2b14fb" />
+
 
 I don't know how to take screenshot ;)
 
