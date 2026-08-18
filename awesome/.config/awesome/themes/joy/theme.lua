@@ -4,7 +4,7 @@ local theme = {}
 
 -- basics
 theme.wallpaper  = "/home/joy/.config/backgrounds/nice-blue-background.png"
-theme.font       = "JetbrainsMono Nerd Font 11"
+theme.font       = "JetbrainsMono Nerd Font 9"
 
 -- custom colors
 local colors = {

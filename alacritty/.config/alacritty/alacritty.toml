@@ -12,4 +12,4 @@ padding = { x = 6, y = 6 }
 
 [font]
 normal = { family = 'JetBrainsMono Nerd Font Mono', style = 'Regular' }
-size = 10
+size = 10.5
