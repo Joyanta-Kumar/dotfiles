@@ -1,5 +1,13 @@
 # Dotfiles for my linux setup
 
+## Using
+1. Awesome WM
+2. Rofi
+3. Thunar
+4. Kitty
+5. Wiremix
+6. Feh, GThumb
+
 Borrowed idea and configs from  
 
 ## Colors
