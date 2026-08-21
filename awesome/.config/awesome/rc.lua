@@ -53,7 +53,7 @@ end
 beautiful.init("/home/joy/.config/awesome/themes/joy/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
