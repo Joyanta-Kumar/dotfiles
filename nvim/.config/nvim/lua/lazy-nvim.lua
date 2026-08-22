@@ -18,6 +18,11 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
+
   install = { colorscheme = { "catppuccin" } },
-  checker = { enabled = true },
+  checker = {
+    enabled = true,
+    notify = true, 
+  },
+  change_detection = { notify = true, },
 })
