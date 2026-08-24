@@ -9,9 +9,14 @@ return {
     config = function()
       require("catppuccin").setup({
         flavour = "mocha",
-        trannsparent_background = false
+        trannsparent_background = false,
+        color_overrides = {
+          all = {
+            base = "#0E0E14"
+          }
+        }
       })
-      -- vim.cmd.colorscheme "catppuccin-nvim"
+      vim.cmd.colorscheme "catppuccin-nvim"
     end
   },
 
@@ -27,7 +32,7 @@ return {
         theme = "wave",
         trannsparent = false
       })
-      vim.cmd.colorscheme "kanagawa"
+      -- vim.cmd.colorscheme "kanagawa"
     end
   },
 
