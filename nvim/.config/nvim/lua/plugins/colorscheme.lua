@@ -1,10 +1,10 @@
-return {
-  --kanagawa 
+return { --kanagawa 
   {
     "rebelot/kanagawa.nvim",
     name = "kanagawa",
     lazy = false,
     priority = 1000,
+    enabled = false,
 
     config = function()
       require("kanagawa").setup({
@@ -21,6 +21,7 @@ return {
     name = "nightfox",
     lazy = false,
     priority = 1000,
+    enabled = false,
 
     config = function()
       require("nightfox").setup({
@@ -28,7 +29,31 @@ return {
           transparent = false
         }
       })
-      vim.cmd.colorscheme "nightfox"
+      -- vim.cmd.colorscheme "nightfox"
     end
   },
+
+  -- catppuccin
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+
+    config = function()
+      require("catppuccin").setup({
+        flavour = "mocha",
+        background = {
+          light = "latte",
+          dark = "mocha"
+        },
+        transparent_background = false,
+        color_overrides = {
+          mocha = {
+            base = "#141820"
+          }
+        }
+      })
+      vim.cmd.colorscheme "catppuccin-nvim"
+    end
+  }
 }
