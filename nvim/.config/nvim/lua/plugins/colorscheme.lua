@@ -1,25 +1,4 @@
 return {
-  -- catppuccin
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    lazy = false,
-    priority = 1000,
-
-    config = function()
-      require("catppuccin").setup({
-        flavour = "mocha",
-        trannsparent_background = false,
-        color_overrides = {
-          all = {
-            base = "#0E0E14"
-          }
-        }
-      })
-      vim.cmd.colorscheme "catppuccin-nvim"
-    end
-  },
-
   --kanagawa 
   {
     "rebelot/kanagawa.nvim",
@@ -49,7 +28,7 @@ return {
           transparent = false
         }
       })
-      -- vim.cmd.colorscheme "nightfox"
+      vim.cmd.colorscheme "nightfox"
     end
   },
 }

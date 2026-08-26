@@ -3,6 +3,8 @@ vim.opt.cursorline = true
 vim.opt.wrap = false
 
 vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 
 vim.opt.swapfile = false
@@ -11,7 +13,7 @@ vim.opt.undofile = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.incsearch = false
+vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
