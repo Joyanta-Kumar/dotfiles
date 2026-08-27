@@ -36,23 +36,18 @@ return { --kanagawa
   -- catppuccin
   {
     "catppuccin/nvim",
+
     name = "catppuccin",
+    lazy = false,
     priority = 1000,
 
     config = function()
       require("catppuccin").setup({
         flavour = "mocha",
-        background = {
-          light = "latte",
-          dark = "mocha"
-        },
         transparent_background = false,
-        color_overrides = {
-          mocha = {
-            base = "#141820"
-          }
-        }
+        color_overrides = { mocha = { base = "#141820" } }
       })
+
       vim.cmd.colorscheme "catppuccin-nvim"
     end
   }
