@@ -47,7 +47,7 @@ theme.bg_systray    = colors.crust
 
 -- Borders
 theme.useless_gap   = dpi(4)
-theme.border_width  = dpi(1)
+theme.border_width  = dpi(2)
 theme.border_focus  = colors.blue
 theme.border_normal = colors.base
 theme.border_marked = colors.red

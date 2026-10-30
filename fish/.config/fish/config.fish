@@ -5,5 +5,6 @@ source (/usr/bin/starship init fish --print-full-init | psub)
 
 # fastfetch -c examples/9
 
+fortune
 alias tree="tree -C"
 
