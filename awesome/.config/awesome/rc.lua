@@ -50,7 +50,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
-beautiful.init("/home/joy/.config/awesome/themes/joy/theme.lua")
+beautiful.init("/home/joy/.config/awesome/themes/choto/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
@@ -68,7 +68,7 @@ modkey = "Mod4"
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.floating,
-     awful.layout.suit.tile.left,
+    awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
@@ -291,9 +291,9 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey, }, "Return", function() awful.spawn(terminal) end,
         { description = "open a terminal", group = "launcher" }),
-    awful.key({ modkey, "Shift"}, "Return", function()
-	    awful.spawn(terminal .. " --class floating_terminal")
-    	end,
+    awful.key({ modkey, "Shift" }, "Return", function()
+            awful.spawn(terminal .. " --class floating_terminal")
+        end,
         { description = "open a floatimg terminal", group = "launcher" }),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
         { description = "reload awesome", group = "awesome" }),
@@ -356,10 +356,10 @@ globalkeys = gears.table.join(
 clientkeys = gears.table.join(
     awful.key({ modkey, }, "b",
         function(c)
-		local s = awful.screen.focused()
-		if s.mywibox then
-			s.mywibox.visible = not s.mywibox.visible
-		end
+            local s = awful.screen.focused()
+            if s.mywibox then
+                s.mywibox.visible = not s.mywibox.visible
+            end
         end,
         { description = "toggle bar", group = "client" }),
     awful.key({ modkey, }, "f",
@@ -495,18 +495,18 @@ awful.rules.rules = {
     {
         rule_any = {
             instance = {
-                "DTA", -- Firefox addon DownThemAll.
+                "DTA",   -- Firefox addon DownThemAll.
                 "copyq", -- Includes session name in class.
                 "pinentry",
             },
             class = {
-		"floating_terminal",
+                "floating_terminal",
                 "pavucontrol",
                 "Arandr",
                 "Blueman-manager",
                 "Gpick",
                 "Kruler",
-                "MessageWin", -- kalarm.
+                "MessageWin",  -- kalarm.
                 "Sxiv",
                 "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
                 "Wpa_gui",
@@ -519,9 +519,9 @@ awful.rules.rules = {
                 "Event Tester", -- xev.
             },
             role = {
-                "AlarmWindow", -- Thunderbird's calendar.
+                "AlarmWindow",   -- Thunderbird's calendar.
                 "ConfigManager", -- Thunderbird's about:config.
-                "pop-up",  -- e.g. Google Chrome's (detached) Developer Tools.
+                "pop-up",        -- e.g. Google Chrome's (detached) Developer Tools.
             }
         },
         properties = { floating = true }
@@ -534,9 +534,18 @@ awful.rules.rules = {
         properties = { titlebars_enabled = false }
     },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    -- {
+    --     rule = { class = "firefox" },
+    --     properties = { screen = 1, tag = "2" }
+    -- },
+
+    {
+        rule = { class = "Xfce-polkit" },
+        properties = { 
+            placement = awful.placement.centered,
+            floating = true,
+        }
+    },
 }
 -- }}}
 
@@ -606,8 +615,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 
 
-awful.spawn.with_shell("picom")
-awful.spawn.with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
-awful.spawn.with_shell("pgrep -x redshift || redshift &")
+-- awful.spawn.with_shell("picom")
+-- awful.spawn.with_shell("pgrep -x redshift || redshift &")
 
-os.execute("export QT_QPA_PLATFORMTHEME=qt5ct")
+awful.spawn.with_shell("/usr/lib/xfce-polkit/xfce-polkit")
+awful.spawn.with_shell("ibus-daemon -drx")
