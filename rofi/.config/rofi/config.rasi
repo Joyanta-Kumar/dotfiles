@@ -1,16 +1,37 @@
-configuration{
-    modi: "run,window,combi";
-    show-icons: true;
-    terminal: "alacritty";
-    drun-display-format: "{icon} {name}";
-    location: 0;
-    disable-history: false;
-    hide-scrollbar: false;
-    display-drun: " 󱜚 Drun";
-    display-run: " >  Run ";
-    display-window: " 󱂬  Window";
-    display-combi: " 󰣇  All ";
+configuration {
+    /* --- Modes & Layout --- */
+    modi: "drun,run,window,combi";
+    combi-modi: "drun,run";
     sidebar-mode: true;
+    location: 0;
+    yoffset: 0;
+    xoffset: 0;
+
+    /* --- Icons & Terminal --- */
+    show-icons: true;
+    drun-display-format: "{icon}  {name}";
+    terminal: "alacritty";
+
+    /* --- Behavior & Matching --- */
+    disable-history: false;
+    sort: true;
+    sorting-method: "normal";
+    case-sensitive: false;
+    cycle: true;
+    hover-select: true;
+    scroll-method: 1;
+    hide-scrollbar: true;
+    fullscreen: false;
+    kb-row-up: "Up,Control+k,Shift+Tab";
+    kb-row-down: "Down,Control+j";
+    kb-accept-entry: "Return,Control+m";
+    kb-remove-to-eol: "";
+
+    /* --- Custom Icons/Labels --- */
+    display-drun: "󱜚  Apps";
+    display-run: "  Run";
+    display-window: "󱂬  Window";
+    display-combi: "󰣇  All";
 }
 
-@theme "choto"
+@theme "sword"

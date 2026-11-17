@@ -1,0 +1,131 @@
+* {
+    /* Mapped from your palette.lua file */
+    bg-obsidian:     #111418;  /* background */
+    bg-charcoal:     #181c22;  /* light_background */
+    bg-selection:    #20252d;  /* selection */
+    fg-silver:       #e5edf8;  /* light_foreground */
+    fg-steel:        #c7d2e0;  /* foreground */
+    fg-muted:        #6b7280;  /* dark_foreground / comments */
+    border-slate:    #4b5563;  /* comments / borders */
+    accent-crimson:  #ef6f6c;  /* red */
+    accent-blue:     #6ea8fe;  /* blue */
+    accent-green:    #7dd36f;  /* green */
+
+    background-color: transparent;
+    text-color:       @fg-steel;
+    font:             "JetBrainsMono Nerd Font 10";
+}
+
+window {
+    width:            520px;
+    height:           460px;
+    background-color: @bg-obsidian;
+    border:           1px;
+    border-color:     @border-slate;
+    border-radius:    4px;
+}
+
+mainbox {
+    background-color: transparent;
+    padding:          18px;
+    children:         [ inputbar, listview, mode-switcher ];
+}
+
+inputbar {
+    children:         [ prompt, entry ];
+    background-color: @bg-charcoal;
+    border:           0px 0px 1px 0px;
+    border-color:     @accent-crimson;
+    border-radius:    2px;
+    padding:          6px 10px;
+    margin:           0px 0px 14px 0px;
+}
+
+prompt {
+    font:             "The Last Shuriken 11";
+    background-color: transparent;
+    text-color:       @accent-crimson;
+    padding:          4px 10px 4px 2px;
+    vertical-align:   0.5;
+}
+
+entry {
+    background-color: transparent;
+    text-color:       @fg-silver;
+    placeholder:      "Search...";
+    placeholder-color:@fg-muted;
+    padding:          4px;
+    vertical-align:   0.5;
+}
+
+listview {
+    background-color: transparent;
+    columns:          1;
+    lines:            6;
+    spacing:          4px;
+    cycle:            true;
+    dynamic:          true;
+    scrollbar:        false;
+}
+
+element {
+    background-color: transparent;
+    text-color:       @fg-steel;
+    padding:          9px 12px;
+    border-radius:    2px;
+    border:           0px 0px 0px 2px;
+    border-color:     transparent;
+}
+
+element-icon {
+    size:             22px;
+    margin:           0px 12px 0px 0px;
+    vertical-align:   0.5;
+}
+
+element-text {
+    vertical-align:   0.5;
+}
+
+element selected {
+    background-color: @bg-selection;
+    text-color:       @fg-silver;
+    border:           0px 0px 0px 2px;
+    border-color:     @accent-crimson;
+}
+
+mode-switcher {
+    spacing:          8px;
+    margin:           14px 0px 0px 0px;
+}
+
+button {
+    background-color: @bg-charcoal;
+    text-color:       @fg-muted;
+    padding:          8px;
+    border-radius:    2px;
+    border:           1px;
+    border-color:     transparent;
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+}
+
+button selected {
+    background-color: @bg-selection;
+    text-color:       @accent-green;
+    border:           1px;
+    border-color:     @border-slate;
+}
+
+message {
+    background-color: @bg-charcoal;
+    border:           1px;
+    border-color:     @border-slate;
+    border-radius:    2px;
+    padding:          8px;
+    margin:           10px 0px 0px 0px;
+}
+
+textbox {
+    text-color:       @fg-silver;
+}

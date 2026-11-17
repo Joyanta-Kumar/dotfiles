@@ -1,0 +1,138 @@
+* {
+    bg-obsidian:     #111418;
+    bg-overlay:      #111418EB;
+    bg-charcoal:     #181c22;
+    bg-selection:    #20252d;
+    fg-lightest:     #f8fbff;
+    fg-silver:       #e5edf8;
+    fg-steel:        #c7d2e0;
+    fg-muted:        #6b7280;
+    border-slate:    #4b5563;
+    accent-blue:     #6ea8fe;
+    accent-green:    #7dd36f;
+    accent-yellow:   #f6d365;
+
+    background-color: transparent;
+    text-color:       @fg-steel;
+    font:             "JetBrainsMono Nerd Font 10";
+}
+
+window {
+    fullscreen:       false;
+    background-color: @bg-overlay;
+}
+
+mainbox {
+    orientation:      horizontal;
+    background-color: @bg-obsidian;
+    border:           1px;
+    border-color:     @border-slate;
+    border-radius:    10px;
+    children:         [ left-hero, right-list ];
+}
+
+left-hero {
+    orientation:      vertical;
+    width:            320px;
+    background-color: @bg-charcoal;
+    padding:          32px 24px;
+    spacing:          18px;
+    border:           0px 1px 0px 0px;
+    border-color:     @border-slate;
+    children:         [ dummy, icon-current-entry, inputbar, mode-switcher, dummy ];
+}
+
+icon-current-entry {
+    expand:           false;
+    size:             96px;
+    horizontal-align: 0.5;
+    margin:           0px 0px 8px 0px;
+}
+
+dummy {
+    background-color: transparent;
+}
+
+textbox-hero {
+    expand:           false;
+    content:          "S W O R D";
+    font:             "The Last Shuriken 26";
+    text-color:       @fg-lightest;
+    horizontal-align: 0.5;
+}
+
+textbox-tag {
+    expand:           false;
+    content:          "AWESOME // ARCH";
+    font:             "JetBrainsMono Nerd Font 8";
+    text-color:       @accent-blue;
+    horizontal-align: 0.5;
+    margin:           -10px 0px 8px 0px;
+}
+
+inputbar {
+    children:         [ entry ];
+    background-color: @bg-obsidian;
+    border:           1px;
+    border-color:     @accent-blue;
+    border-radius:    20px;
+    padding:          9px 16px;
+}
+
+entry {
+    text-color:       @fg-lightest;
+    placeholder:      "Search...";
+    placeholder-color:@fg-muted;
+    horizontal-align: 0.5;
+}
+
+mode-switcher {
+    spacing:          6px;
+    margin:           6px 0px 0px 0px;
+}
+
+button {
+    padding:          6px 8px;
+    border-radius:    6px;
+    background-color: @bg-obsidian;
+    text-color:       @fg-muted;
+    horizontal-align: 0.5;
+}
+
+button selected {
+    background-color: @bg-selection;
+    text-color:       @accent-green;
+}
+
+right-list {
+    orientation:      vertical;
+    padding:          22px;
+    children:         [ listview ];
+}
+
+listview {
+    lines:            7;
+    columns:          1;
+    spacing:          6px;
+    scrollbar:        false;
+}
+
+element {
+    padding:          10px 14px;
+    border-radius:    8px;
+}
+
+element-icon {
+    size:             22px;
+    margin:           0px 12px 0px 0px;
+    vertical-align:   0.5;
+}
+
+element-text {
+    vertical-align:   0.5;
+}
+
+element selected {
+    background-color: @bg-selection;
+    text-color:       @accent-yellow;
+}
