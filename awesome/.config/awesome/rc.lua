@@ -54,7 +54,7 @@ beautiful.init("/home/joy/.config/awesome/themes/choto/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
-editor = os.getenv("EDITOR") or "vim"
+editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -66,8 +66,8 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.tile,
     awful.layout.suit.floating,
+    awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
@@ -97,7 +97,7 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({
     items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-        { "open terminal", terminal }
+        { "open terminal", terminal },
     }
 })
 
@@ -541,7 +541,7 @@ awful.rules.rules = {
 
     {
         rule = { class = "Xfce-polkit" },
-        properties = { 
+        properties = {
             placement = awful.placement.centered,
             floating = true,
         }
@@ -615,8 +615,9 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 
 
--- awful.spawn.with_shell("picom")
--- awful.spawn.with_shell("pgrep -x redshift || redshift &")
+awful.spawn.with_shell("killall picom; picom")
+--awful.spawn.with_shell("pgrep -x redshift || redshift")
+awful.spawn.with_shell("killall redshift; redshift")
 
-awful.spawn.with_shell("/usr/lib/xfce-polkit/xfce-polkit")
+awful.spawn.with_shell("killall xfce-polkit; /usr/lib/xfce-polkit/xfce-polkit")
 awful.spawn.with_shell("ibus-daemon -drx")
