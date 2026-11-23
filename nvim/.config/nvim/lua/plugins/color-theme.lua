@@ -35,6 +35,4 @@ return {
       vim.cmd.colorscheme("choto")
     end
   }
-
-
 }
